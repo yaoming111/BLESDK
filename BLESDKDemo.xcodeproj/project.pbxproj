@@ -1,0 +1,385 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		466A9C091FD7A9B60098D118 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 466A9C081FD7A9B60098D118 /* AppDelegate.m */; };
+		466A9C0C1FD7A9B60098D118 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 466A9C0B1FD7A9B60098D118 /* ViewController.m */; };
+		466A9C0F1FD7A9B60098D118 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 466A9C0D1FD7A9B60098D118 /* Main.storyboard */; };
+		466A9C111FD7A9B60098D118 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 466A9C101FD7A9B60098D118 /* Assets.xcassets */; };
+		466A9C141FD7A9B60098D118 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 466A9C121FD7A9B60098D118 /* LaunchScreen.storyboard */; };
+		466A9C171FD7A9B60098D118 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 466A9C161FD7A9B60098D118 /* main.m */; };
+		466A9C401FD7AAD80098D118 /* YMZBLEManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 466A9C3F1FD7AAD80098D118 /* YMZBLEManager.m */; };
+		466A9C451FD7BF7C0098D118 /* YMZBaseBLEDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 466A9C441FD7BF7C0098D118 /* YMZBaseBLEDevice.m */; };
+		466A9C491FD7C6B00098D118 /* YMZPrinterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 466A9C481FD7C6B00098D118 /* YMZPrinterManager.m */; };
+		466A9C4D1FD7D2050098D118 /* YMZPrinter.m in Sources */ = {isa = PBXBuildFile; fileRef = 466A9C4C1FD7D2050098D118 /* YMZPrinter.m */; };
+		466A9C501FD7D7B30098D118 /* YMZGCDTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 466A9C4F1FD7D7B30098D118 /* YMZGCDTimer.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		466A9C041FD7A9B60098D118 /* BLESDKDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BLESDKDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		466A9C071FD7A9B60098D118 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		466A9C081FD7A9B60098D118 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		466A9C0A1FD7A9B60098D118 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		466A9C0B1FD7A9B60098D118 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		466A9C0E1FD7A9B60098D118 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		466A9C101FD7A9B60098D118 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		466A9C131FD7A9B60098D118 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		466A9C151FD7A9B60098D118 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		466A9C161FD7A9B60098D118 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		466A9C3E1FD7AAD80098D118 /* YMZBLEManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YMZBLEManager.h; sourceTree = "<group>"; };
+		466A9C3F1FD7AAD80098D118 /* YMZBLEManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YMZBLEManager.m; sourceTree = "<group>"; };
+		466A9C411FD7ABCB0098D118 /* YMZBLEDeviceProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YMZBLEDeviceProtocol.h; sourceTree = "<group>"; };
+		466A9C421FD7B3880098D118 /* CHDBLEManagerProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CHDBLEManagerProtocol.h; sourceTree = "<group>"; };
+		466A9C431FD7BF7C0098D118 /* YMZBaseBLEDevice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YMZBaseBLEDevice.h; sourceTree = "<group>"; };
+		466A9C441FD7BF7C0098D118 /* YMZBaseBLEDevice.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YMZBaseBLEDevice.m; sourceTree = "<group>"; };
+		466A9C471FD7C6B00098D118 /* YMZPrinterManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YMZPrinterManager.h; sourceTree = "<group>"; };
+		466A9C481FD7C6B00098D118 /* YMZPrinterManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YMZPrinterManager.m; sourceTree = "<group>"; };
+		466A9C4A1FD7CA8D0098D118 /* YMZBLEHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YMZBLEHeader.h; sourceTree = "<group>"; };
+		466A9C4B1FD7D2050098D118 /* YMZPrinter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YMZPrinter.h; sourceTree = "<group>"; };
+		466A9C4C1FD7D2050098D118 /* YMZPrinter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YMZPrinter.m; sourceTree = "<group>"; };
+		466A9C4E1FD7D7B30098D118 /* YMZGCDTimer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YMZGCDTimer.h; sourceTree = "<group>"; };
+		466A9C4F1FD7D7B30098D118 /* YMZGCDTimer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YMZGCDTimer.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		466A9C011FD7A9B60098D118 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		466A9BFB1FD7A9B60098D118 = {
+			isa = PBXGroup;
+			children = (
+				466A9C061FD7A9B60098D118 /* BLESDKDemo */,
+				466A9C051FD7A9B60098D118 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		466A9C051FD7A9B60098D118 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				466A9C041FD7A9B60098D118 /* BLESDKDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		466A9C061FD7A9B60098D118 /* BLESDKDemo */ = {
+			isa = PBXGroup;
+			children = (
+				466A9C3A1FD7AA8F0098D118 /* SDK */,
+				466A9C071FD7A9B60098D118 /* AppDelegate.h */,
+				466A9C081FD7A9B60098D118 /* AppDelegate.m */,
+				466A9C0A1FD7A9B60098D118 /* ViewController.h */,
+				466A9C0B1FD7A9B60098D118 /* ViewController.m */,
+				466A9C0D1FD7A9B60098D118 /* Main.storyboard */,
+				466A9C101FD7A9B60098D118 /* Assets.xcassets */,
+				466A9C121FD7A9B60098D118 /* LaunchScreen.storyboard */,
+				466A9C151FD7A9B60098D118 /* Info.plist */,
+				466A9C161FD7A9B60098D118 /* main.m */,
+			);
+			path = BLESDKDemo;
+			sourceTree = "<group>";
+		};
+		466A9C3A1FD7AA8F0098D118 /* SDK */ = {
+			isa = PBXGroup;
+			children = (
+				466A9C461FD7C68A0098D118 /* DEMO */,
+				466A9C3E1FD7AAD80098D118 /* YMZBLEManager.h */,
+				466A9C3F1FD7AAD80098D118 /* YMZBLEManager.m */,
+				466A9C431FD7BF7C0098D118 /* YMZBaseBLEDevice.h */,
+				466A9C441FD7BF7C0098D118 /* YMZBaseBLEDevice.m */,
+				466A9C411FD7ABCB0098D118 /* YMZBLEDeviceProtocol.h */,
+				466A9C421FD7B3880098D118 /* CHDBLEManagerProtocol.h */,
+				466A9C4A1FD7CA8D0098D118 /* YMZBLEHeader.h */,
+				466A9C4E1FD7D7B30098D118 /* YMZGCDTimer.h */,
+				466A9C4F1FD7D7B30098D118 /* YMZGCDTimer.m */,
+			);
+			path = SDK;
+			sourceTree = "<group>";
+		};
+		466A9C461FD7C68A0098D118 /* DEMO */ = {
+			isa = PBXGroup;
+			children = (
+				466A9C471FD7C6B00098D118 /* YMZPrinterManager.h */,
+				466A9C481FD7C6B00098D118 /* YMZPrinterManager.m */,
+				466A9C4B1FD7D2050098D118 /* YMZPrinter.h */,
+				466A9C4C1FD7D2050098D118 /* YMZPrinter.m */,
+			);
+			path = DEMO;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		466A9C031FD7A9B60098D118 /* BLESDKDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 466A9C301FD7A9B60098D118 /* Build configuration list for PBXNativeTarget "BLESDKDemo" */;
+			buildPhases = (
+				466A9C001FD7A9B60098D118 /* Sources */,
+				466A9C011FD7A9B60098D118 /* Frameworks */,
+				466A9C021FD7A9B60098D118 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BLESDKDemo;
+			productName = BLESDKDemo;
+			productReference = 466A9C041FD7A9B60098D118 /* BLESDKDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		466A9BFC1FD7A9B60098D118 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0910;
+				ORGANIZATIONNAME = "Y@o";
+				TargetAttributes = {
+					466A9C031FD7A9B60098D118 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 466A9BFF1FD7A9B60098D118 /* Build configuration list for PBXProject "BLESDKDemo" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 466A9BFB1FD7A9B60098D118;
+			productRefGroup = 466A9C051FD7A9B60098D118 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				466A9C031FD7A9B60098D118 /* BLESDKDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		466A9C021FD7A9B60098D118 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				466A9C141FD7A9B60098D118 /* LaunchScreen.storyboard in Resources */,
+				466A9C111FD7A9B60098D118 /* Assets.xcassets in Resources */,
+				466A9C0F1FD7A9B60098D118 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		466A9C001FD7A9B60098D118 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				466A9C401FD7AAD80098D118 /* YMZBLEManager.m in Sources */,
+				466A9C0C1FD7A9B60098D118 /* ViewController.m in Sources */,
+				466A9C171FD7A9B60098D118 /* main.m in Sources */,
+				466A9C491FD7C6B00098D118 /* YMZPrinterManager.m in Sources */,
+				466A9C451FD7BF7C0098D118 /* YMZBaseBLEDevice.m in Sources */,
+				466A9C4D1FD7D2050098D118 /* YMZPrinter.m in Sources */,
+				466A9C091FD7A9B60098D118 /* AppDelegate.m in Sources */,
+				466A9C501FD7D7B30098D118 /* YMZGCDTimer.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		466A9C0D1FD7A9B60098D118 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				466A9C0E1FD7A9B60098D118 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		466A9C121FD7A9B60098D118 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				466A9C131FD7A9B60098D118 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		466A9C2E1FD7A9B60098D118 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		466A9C2F1FD7A9B60098D118 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		466A9C311FD7A9B60098D118 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 44VW2R857H;
+				INFOPLIST_FILE = BLESDKDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = YMZ.BLESDKDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		466A9C321FD7A9B60098D118 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 44VW2R857H;
+				INFOPLIST_FILE = BLESDKDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = YMZ.BLESDKDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		466A9BFF1FD7A9B60098D118 /* Build configuration list for PBXProject "BLESDKDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				466A9C2E1FD7A9B60098D118 /* Debug */,
+				466A9C2F1FD7A9B60098D118 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		466A9C301FD7A9B60098D118 /* Build configuration list for PBXNativeTarget "BLESDKDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				466A9C311FD7A9B60098D118 /* Debug */,
+				466A9C321FD7A9B60098D118 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 466A9BFC1FD7A9B60098D118 /* Project object */;
+}
