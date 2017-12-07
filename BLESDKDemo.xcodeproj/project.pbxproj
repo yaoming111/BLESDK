@@ -18,6 +18,9 @@
 		466A9C491FD7C6B00098D118 /* YMZPrinterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 466A9C481FD7C6B00098D118 /* YMZPrinterManager.m */; };
 		466A9C4D1FD7D2050098D118 /* YMZPrinter.m in Sources */ = {isa = PBXBuildFile; fileRef = 466A9C4C1FD7D2050098D118 /* YMZPrinter.m */; };
 		466A9C501FD7D7B30098D118 /* YMZGCDTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 466A9C4F1FD7D7B30098D118 /* YMZGCDTimer.m */; };
+		46BDA3441FD8259500E41A23 /* YMZBLEPeripheralManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 46BDA3431FD8259400E41A23 /* YMZBLEPeripheralManager.m */; };
+		46BDA34A1FD839D100E41A23 /* YMZBaseServiceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 46BDA3491FD839D100E41A23 /* YMZBaseServiceManager.m */; };
+		46BDA34F1FD843EC00E41A23 /* YMZDisplayServiceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 46BDA34E1FD843EC00E41A23 /* YMZDisplayServiceManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +47,13 @@
 		466A9C4C1FD7D2050098D118 /* YMZPrinter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YMZPrinter.m; sourceTree = "<group>"; };
 		466A9C4E1FD7D7B30098D118 /* YMZGCDTimer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YMZGCDTimer.h; sourceTree = "<group>"; };
 		466A9C4F1FD7D7B30098D118 /* YMZGCDTimer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YMZGCDTimer.m; sourceTree = "<group>"; };
+		46BDA3421FD8259400E41A23 /* YMZBLEPeripheralManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YMZBLEPeripheralManager.h; sourceTree = "<group>"; };
+		46BDA3431FD8259400E41A23 /* YMZBLEPeripheralManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YMZBLEPeripheralManager.m; sourceTree = "<group>"; };
+		46BDA3481FD839D100E41A23 /* YMZBaseServiceManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YMZBaseServiceManager.h; sourceTree = "<group>"; };
+		46BDA3491FD839D100E41A23 /* YMZBaseServiceManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YMZBaseServiceManager.m; sourceTree = "<group>"; };
+		46BDA34B1FD83F6000E41A23 /* YMZServiceManagerProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YMZServiceManagerProtocol.h; sourceTree = "<group>"; };
+		46BDA34D1FD843EC00E41A23 /* YMZDisplayServiceManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YMZDisplayServiceManager.h; sourceTree = "<group>"; };
+		46BDA34E1FD843EC00E41A23 /* YMZDisplayServiceManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YMZDisplayServiceManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,15 +104,8 @@
 			isa = PBXGroup;
 			children = (
 				466A9C461FD7C68A0098D118 /* DEMO */,
-				466A9C3E1FD7AAD80098D118 /* YMZBLEManager.h */,
-				466A9C3F1FD7AAD80098D118 /* YMZBLEManager.m */,
-				466A9C431FD7BF7C0098D118 /* YMZBaseBLEDevice.h */,
-				466A9C441FD7BF7C0098D118 /* YMZBaseBLEDevice.m */,
-				466A9C411FD7ABCB0098D118 /* YMZBLEDeviceProtocol.h */,
-				466A9C421FD7B3880098D118 /* CHDBLEManagerProtocol.h */,
-				466A9C4A1FD7CA8D0098D118 /* YMZBLEHeader.h */,
-				466A9C4E1FD7D7B30098D118 /* YMZGCDTimer.h */,
-				466A9C4F1FD7D7B30098D118 /* YMZGCDTimer.m */,
+				46BDA3411FD8255500E41A23 /* Central */,
+				46BDA3471FD8398600E41A23 /* Peripheral */,
 			);
 			path = SDK;
 			sourceTree = "<group>";
@@ -114,6 +117,44 @@
 				466A9C481FD7C6B00098D118 /* YMZPrinterManager.m */,
 				466A9C4B1FD7D2050098D118 /* YMZPrinter.h */,
 				466A9C4C1FD7D2050098D118 /* YMZPrinter.m */,
+			);
+			path = DEMO;
+			sourceTree = "<group>";
+		};
+		46BDA3411FD8255500E41A23 /* Central */ = {
+			isa = PBXGroup;
+			children = (
+				466A9C3E1FD7AAD80098D118 /* YMZBLEManager.h */,
+				466A9C3F1FD7AAD80098D118 /* YMZBLEManager.m */,
+				466A9C431FD7BF7C0098D118 /* YMZBaseBLEDevice.h */,
+				466A9C441FD7BF7C0098D118 /* YMZBaseBLEDevice.m */,
+				466A9C411FD7ABCB0098D118 /* YMZBLEDeviceProtocol.h */,
+				466A9C421FD7B3880098D118 /* CHDBLEManagerProtocol.h */,
+				466A9C4A1FD7CA8D0098D118 /* YMZBLEHeader.h */,
+				466A9C4E1FD7D7B30098D118 /* YMZGCDTimer.h */,
+				466A9C4F1FD7D7B30098D118 /* YMZGCDTimer.m */,
+			);
+			path = Central;
+			sourceTree = "<group>";
+		};
+		46BDA3471FD8398600E41A23 /* Peripheral */ = {
+			isa = PBXGroup;
+			children = (
+				46BDA34C1FD8431F00E41A23 /* DEMO */,
+				46BDA3421FD8259400E41A23 /* YMZBLEPeripheralManager.h */,
+				46BDA3431FD8259400E41A23 /* YMZBLEPeripheralManager.m */,
+				46BDA3481FD839D100E41A23 /* YMZBaseServiceManager.h */,
+				46BDA3491FD839D100E41A23 /* YMZBaseServiceManager.m */,
+				46BDA34B1FD83F6000E41A23 /* YMZServiceManagerProtocol.h */,
+			);
+			path = Peripheral;
+			sourceTree = "<group>";
+		};
+		46BDA34C1FD8431F00E41A23 /* DEMO */ = {
+			isa = PBXGroup;
+			children = (
+				46BDA34D1FD843EC00E41A23 /* YMZDisplayServiceManager.h */,
+				46BDA34E1FD843EC00E41A23 /* YMZDisplayServiceManager.m */,
 			);
 			path = DEMO;
 			sourceTree = "<group>";
@@ -192,11 +233,14 @@
 				466A9C401FD7AAD80098D118 /* YMZBLEManager.m in Sources */,
 				466A9C0C1FD7A9B60098D118 /* ViewController.m in Sources */,
 				466A9C171FD7A9B60098D118 /* main.m in Sources */,
+				46BDA3441FD8259500E41A23 /* YMZBLEPeripheralManager.m in Sources */,
 				466A9C491FD7C6B00098D118 /* YMZPrinterManager.m in Sources */,
 				466A9C451FD7BF7C0098D118 /* YMZBaseBLEDevice.m in Sources */,
 				466A9C4D1FD7D2050098D118 /* YMZPrinter.m in Sources */,
 				466A9C091FD7A9B60098D118 /* AppDelegate.m in Sources */,
+				46BDA34F1FD843EC00E41A23 /* YMZDisplayServiceManager.m in Sources */,
 				466A9C501FD7D7B30098D118 /* YMZGCDTimer.m in Sources */,
+				46BDA34A1FD839D100E41A23 /* YMZBaseServiceManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

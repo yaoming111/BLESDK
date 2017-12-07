@@ -9,9 +9,14 @@
 #import "ViewController.h"
 #import "YMZPrinterManager.h"
 
-@interface ViewController ()<UITableViewDelegate, UITableViewDataSource>
+#import "YMZBLEPeripheralManager.h"
+#import "YMZDisplayServiceManager.h"
+
+@interface ViewController ()<UITableViewDelegate, UITableViewDataSource, YMZDisplayServiceManagerDelegate>
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) YMZPrinterManager *printerManager;
+
+@property (nonatomic, strong) YMZBLEPeripheralManager *peripheralManager;
 @end
 
 @implementation ViewController
@@ -20,12 +25,25 @@
     [super viewDidLoad];
     self.printerManager = [[YMZPrinterManager alloc]init];
     
+    self.peripheralManager = [[YMZBLEPeripheralManager alloc]initWithCompletedBlock:^(CBManagerState state) {
+        if (state == CBManagerStatePoweredOn) {
+            YMZDisplayServiceManager *displayServiceManager = [[YMZDisplayServiceManager alloc]init];
+            displayServiceManager.delegate = self;
+            [self.peripheralManager didAddServiceWithServiceManager:displayServiceManager];
+        }
+    }];
+    
     self.tableView = [[UITableView alloc]initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
     [self.view addSubview:self.tableView];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    UITextField *tf = [[UITextField alloc] initWithFrame:CGRectMake(100, 100, 1000, 100)];
+    tf.textColor = [UIColor greenColor];
+    tf.placeholder = @"等待接受数据！！";
+    tf.tag = 1000;
+    [self.view addSubview:tf];
 }
 
 #pragma mark - UITableViewDelegate
@@ -64,4 +82,9 @@
     return cell;
 }
 
+#pragma mark - YMZDisplayServiceManagerDelegate
+- (void)didReceiveData:(NSString *)string {
+    UITextField *tf = [self.view viewWithTag:1000];
+    tf.text = string;
+}
 @end
