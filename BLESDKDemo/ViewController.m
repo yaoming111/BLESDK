@@ -24,12 +24,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.printerManager = [[YMZPrinterManager alloc]init];
-    
+   
+    __weak typeof(self) weakSelf = self;
     self.peripheralManager = [[YMZBLEPeripheralManager alloc]initWithCompletedBlock:^(CBManagerState state) {
+        weakSelf.peripheralManager.advertisementDataLocalName = @"你发我什么我就展示什么";
         if (state == CBManagerStatePoweredOn) {
             YMZDisplayServiceManager *displayServiceManager = [[YMZDisplayServiceManager alloc]init];
             displayServiceManager.delegate = self;
-            [self.peripheralManager didAddServiceWithServiceManager:displayServiceManager];
+            [weakSelf.peripheralManager didAddServiceWithServiceManager:displayServiceManager];
         }
     }];
     

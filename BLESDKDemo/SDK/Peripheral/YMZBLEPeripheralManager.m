@@ -63,17 +63,21 @@
 
 #pragma mark - 私有方法
 - (id<YMZServiceManagerProtocol>)serviceByServiceUUIDSting:(NSString *)uuidString {
-    //TODO:待验证
     return [self.services filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"service.UUID.UUIDString = %@",uuidString]].firstObject;
 }
 #pragma mark - CBPeripheralManagerDelegate
 - (void)peripheralManagerDidUpdateState:(CBPeripheralManager *)peripheral {
     if (peripheral.state == CBManagerStatePoweredOn) {
         //开启服务
-        [self startAdvertising:@{@"serviceUUID":@"FFF0"}];
         if (self.initCompletedBlock) {
             self.initCompletedBlock(peripheral.state);
         }
+        
+       NSArray<CBUUID *> *serviceUUIDs = [self.services valueForKeyPath:@"service.UUID"];
+        
+        [self startAdvertising:@{CBAdvertisementDataServiceUUIDsKey:serviceUUIDs,
+                                 CBAdvertisementDataLocalNameKey:self.advertisementDataLocalName
+                                 }];
     }
 }
 - (void)peripheralManager:(CBPeripheralManager *)peripheral willRestoreState:(NSDictionary<NSString *, id> *)dict {

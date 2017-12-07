@@ -12,6 +12,8 @@
 
 @interface YMZBLEPeripheralManager : NSObject
 
+@property(nonatomic, copy) NSString * _Nullable advertisementDataLocalName;
+
 /*! 初始化方法请在completedBlock state == CBManagerStatePoweredOn时添加服务*/
 - (instancetype _Nonnull )initWithCompletedBlock:(void(^_Nonnull)(CBManagerState state))completedBlock;
 //开始广播
