@@ -1,24 +1,116 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="MzO-Ed-mlq">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--服务端-->
+        <scene sceneID="EgC-eC-RrR">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <viewController id="ICi-Pm-zNV" customClass="DisplayViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mqa-lW-U4g">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fM6-OE-rqN">
+                                <rect key="frame" x="0.0" y="40" width="375" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="KQ9-fr-bgC"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ulq-KW-WDS">
+                                <rect key="frame" x="41" y="293" width="123" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.68586210604427222" green="1" blue="0.66959629035755386" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="获取当前时间"/>
+                                <connections>
+                                    <action selector="getCurrentTime:" destination="ICi-Pm-zNV" eventType="touchUpInside" id="Zyb-u0-0hL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ml-gq-kiQ">
+                                <rect key="frame" x="218" y="293" width="123" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.68586210599999997" green="1" blue="0.66959629040000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="聊天"/>
+                                <connections>
+                                    <action selector="chat:" destination="ICi-Pm-zNV" eventType="touchUpInside" id="r86-fs-d7H"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="lZE-QR-1Gg" firstAttribute="trailing" secondItem="fM6-OE-rqN" secondAttribute="trailing" id="09j-D8-hjq"/>
+                            <constraint firstItem="fM6-OE-rqN" firstAttribute="top" secondItem="lZE-QR-1Gg" secondAttribute="top" constant="20" id="8ex-f1-pmH"/>
+                            <constraint firstItem="fM6-OE-rqN" firstAttribute="leading" secondItem="lZE-QR-1Gg" secondAttribute="leading" id="knf-Rj-LLG"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="lZE-QR-1Gg"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="服务端" id="lfe-11-UUM"/>
+                    <connections>
+                        <outlet property="tf" destination="fM6-OE-rqN" id="x4z-La-Pps"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tf8-vM-rwH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="642.39999999999998" y="620.23988005997012"/>
+        </scene>
+        <!--客户端-->
+        <scene sceneID="Q1J-qt-cOb">
+            <objects>
+                <viewController id="FdL-L6-yOA" customClass="ClientViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tKK-RY-OOm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="akg-eJ-Wo5">
+                                <rect key="frame" x="0.0" y="40" width="375" height="578"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Y33-rH-MMK" firstAttribute="bottom" secondItem="akg-eJ-Wo5" secondAttribute="bottom" id="9dv-bd-ECZ"/>
+                            <constraint firstItem="akg-eJ-Wo5" firstAttribute="top" secondItem="Y33-rH-MMK" secondAttribute="top" constant="20" id="KqX-ZK-Rij"/>
+                            <constraint firstItem="Y33-rH-MMK" firstAttribute="trailing" secondItem="akg-eJ-Wo5" secondAttribute="trailing" id="Rp3-Vp-rEW"/>
+                            <constraint firstItem="akg-eJ-Wo5" firstAttribute="leading" secondItem="Y33-rH-MMK" secondAttribute="leading" id="SXj-2U-2NR"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Y33-rH-MMK"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="客户端" id="Nym-G7-aI1"/>
+                    <connections>
+                        <outlet property="tableView" destination="akg-eJ-Wo5" id="6uZ-Rk-EU0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oS6-dg-uIY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="643" y="-44"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="Pql-Fa-pQE">
+            <objects>
+                <tabBarController id="MzO-Ed-mlq" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0NO-Ow-sb0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="FdL-L6-yOA" kind="relationship" relationship="viewControllers" id="OHW-K1-4CQ"/>
+                        <segue destination="ICi-Pm-zNV" kind="relationship" relationship="viewControllers" id="yTG-zw-XIl"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XiR-Rh-von" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-309" y="288"/>
         </scene>
     </scenes>
 </document>

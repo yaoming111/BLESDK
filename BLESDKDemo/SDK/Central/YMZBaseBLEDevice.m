@@ -50,7 +50,11 @@
 - (void)connectWithResultBlock:(ConnectBlock)resultBlock {
     if (self.peripheral.state != CBPeripheralStateDisconnected) {
         if (resultBlock) {
-            resultBlock(NO, [NSString stringWithFormat:@"当前设备状态是%ld 不是断开状态！！",self.peripheral.state]);
+            if (self.peripheral.state == CBPeripheralStateConnected) {
+                resultBlock(YES, @"设备已是连接状态，无需重复连接！！！");
+            }else {
+                resultBlock(NO, [NSString stringWithFormat:@"当前设备状态是%ld 不是断开状态！！！",self.peripheral.state]);
+            }
         }
         return;
     }
@@ -59,9 +63,10 @@
 }
 /*! 断开连接*/
 - (void)disConnectWithResultBlock:(DisconnectBlock)resultBlock {
+    self.reconnect = NO;
     if (self.peripheral.state == CBPeripheralStateDisconnected) {
         if (resultBlock) {
-            resultBlock(NO, @"当前设备已是断开状态！！");
+            resultBlock(NO, @"当前设备已是断开状态！！！");
         }
         return;
     }
@@ -314,20 +319,24 @@
 #pragma mark - 被动调用
 /*! 连接成功*/
 - (void)didConnected {
+    [self.peripheral discoverServices:[self servicesUUID]];
     if (self.connectResultBlock) {
         self.connectResultBlock(YES, nil);
+        self.connectResultBlock = nil;
     }
 }
 /*! 连接失败*/
 - (void)didFailToConnect {
     if (self.connectResultBlock) {
         self.connectResultBlock(NO, @"连接失败");
+        self.connectResultBlock = nil;
     }
 }
 /*! 已断开*/
 - (void)didDisConnected {
     if (self.disConnectResultBlock) {
         self.disConnectResultBlock(YES, nil);
+        self.disConnectResultBlock = nil;
     }
 }
 
@@ -388,11 +397,12 @@
 - (void)peripheralIsReadyToSendWriteWithoutResponse:(CBPeripheral *)peripheral {
     
 }
-- (void)peripheral:(CBPeripheral *)peripheral didOpenL2CAPChannel:(nullable CBL2CAPChannel *)channel error:(nullable NSError *)error {
-    
-}
+//- (void)peripheral:(CBPeripheral *)peripheral didOpenL2CAPChannel:(nullable CBL2CAPChannel *)channel error:(nullable NSError *)error {
+//    
+//}
 
-    dispatch_queue_t writerDataQueue() {
+
+dispatch_queue_t writerDataQueue() {
     static dispatch_queue_t writerDataQueue;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{

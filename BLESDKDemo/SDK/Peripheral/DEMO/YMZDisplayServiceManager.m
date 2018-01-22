@@ -31,15 +31,31 @@
 
 }
 
-- (void)didReceiveReadRequest:(CBATTRequest *)request {
+- (void)peripheralManager:(CBPeripheralManager *)peripheral didReceiveReadRequest:(CBATTRequest *)request {
 
+    if (request.characteristic.properties & CBCharacteristicPropertyRead) {
+        
+        NSData *data = request.characteristic.value;
+        //处理命令并组织返回值
+        NSData *respondData = [@"19910314" dataUsingEncoding:NSUTF8StringEncoding];
+
+        [request setValue:respondData];
+        //对请求作出成功响应
+        [peripheral respondToRequest:request withResult:CBATTErrorSuccess];
+        
+    }else {
+        
+        [peripheral respondToRequest:request withResult:CBATTErrorWriteNotPermitted];
+    }
 }
 
-- (void)didReceiveWriteRequest:(CBATTRequest *)request {
+- (void)peripheralManager:(CBPeripheralManager *)peripheral didReceiveWriteRequest:(CBATTRequest *)request {
+    
     if ([self.delegate respondsToSelector:@selector(didReceiveData:)]) {
         NSData *data = request.value;
         NSString *string = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
         [self.delegate didReceiveData:string];
+        [peripheral respondToRequest:request withResult:CBATTErrorSuccess];
     }
 }
 @end

@@ -10,6 +10,7 @@
 @class CBPeripheral;
 @class CBCentralManager;
 @class CBCharacteristic;
+@class CBService;
 
 typedef void (^ConnectBlock)(BOOL success, NSString * _Nullable errorDescription);
 /*! 断开回调*/
@@ -40,4 +41,6 @@ NS_ASSUME_NONNULL_END
 - (void)didDisConnected;
 /*! 已接收到characteristic属性更新的数据*/
 - (void)didUpdateValueForCharacteristic:(CBCharacteristic *_Nonnull)characteristic error:(NSError *_Nullable)error;
+
+- (NSArray<CBUUID *> *_Nullable)servicesUUID;
 @end

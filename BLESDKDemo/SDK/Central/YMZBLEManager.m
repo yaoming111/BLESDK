@@ -105,6 +105,7 @@
     if ([self.didConnectedPeripherals containsObject:device]) {
         [self.didConnectedPeripherals removeObject:device];
     }
+    [device didDisConnected];
 }
 - (id<YMZBLEDeviceProtocol>)bleDeviceByIdentifier:(NSString *)identifier {
     id<YMZBLEDeviceProtocol> device = [[self.didDiscoverPeripherals filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"peripheral.identifier.UUIDString = %@", identifier]] firstObject];
@@ -164,7 +165,10 @@
 
 - (void)centralManager:(CBCentralManager *)central didDisconnectPeripheral:(CBPeripheral *)peripheral error:(nullable NSError *)error {
     id<YMZBLEDeviceProtocol> device = [self bleDeviceByIdentifier:peripheral.identifier.UUIDString];
-    [device didDisConnected];
+    [self removeDidConnictedDevice:device];
+    if (device.reconnect) {
+        [central connectPeripheral:device.peripheral options:nil];
+    }
 }
 
 

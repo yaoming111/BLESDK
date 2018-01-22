@@ -31,11 +31,11 @@
 
 }
 
-- (void)didReceiveReadRequest:(CBATTRequest *)request {
+- (void)peripheralManager:(CBPeripheralManager *)peripheral didReceiveReadRequest:(CBATTRequest *)request {
     
 }
 
-- (void)didReceiveWriteRequest:(CBATTRequest *)request {
+- (void)peripheralManager:(CBPeripheralManager *)peripheral didReceiveWriteRequest:(CBATTRequest *)request {
     
 }
 

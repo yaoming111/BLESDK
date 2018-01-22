@@ -7,6 +7,7 @@
 //
 
 #import "YMZPrinterManager.h"
+#import "YMZPrinter.h"
 
 @interface YMZPrinterManager()<CHDBLEManagerDelegate, CHDBLEManagerDatasource>
 @property (nonatomic, strong) YMZBLEManager *manager;
@@ -39,9 +40,10 @@
 #pragma mark - CHDBLEManagerDatasource
 
 - (id<YMZBLEDeviceProtocol, CBPeripheralDelegate>)BLEManager:(YMZBLEManager *)BLEManager conversionCustomDeviceInstanceWithPeripheral:(CBPeripheral *)peripheral advertisementData:(NSDictionary<NSString *, id> *)advertisementData RSSI:(NSNumber *)RSSI {
-
-    YMZBaseBLEDevice *device = [[YMZBaseBLEDevice alloc]init];
+ 
+    YMZPrinter *device = [[YMZPrinter alloc]init];
     device.peripheral = peripheral;
+    device.reconnect = YES;
     return device;
 }
 @end

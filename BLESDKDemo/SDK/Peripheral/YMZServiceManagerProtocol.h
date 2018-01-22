@@ -17,7 +17,7 @@
 //客户端取消订阅了该服务的characteristic指定特征
 - (void)central:(CBCentral *)central didUnsubscribeFromCharacteristic:(CBCharacteristic *)characteristic;
 //接收到读请求
-- (void)didReceiveReadRequest:(CBATTRequest *)request;
+- (void)peripheralManager:(CBPeripheralManager *)peripheral didReceiveReadRequest:(CBATTRequest *)request;
 /*! 接收到写请求*/
-- (void)didReceiveWriteRequest:(CBATTRequest *)request;
+- (void)peripheralManager:(CBPeripheralManager *)peripheral didReceiveWriteRequest:(CBATTRequest *)request;
 @end

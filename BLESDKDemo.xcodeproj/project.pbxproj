@@ -18,10 +18,33 @@
 		466A9C491FD7C6B00098D118 /* YMZPrinterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 466A9C481FD7C6B00098D118 /* YMZPrinterManager.m */; };
 		466A9C4D1FD7D2050098D118 /* YMZPrinter.m in Sources */ = {isa = PBXBuildFile; fileRef = 466A9C4C1FD7D2050098D118 /* YMZPrinter.m */; };
 		466A9C501FD7D7B30098D118 /* YMZGCDTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 466A9C4F1FD7D7B30098D118 /* YMZGCDTimer.m */; };
+		4687B85C1FD989A100768228 /* ClientViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4687B85B1FD989A100768228 /* ClientViewController.m */; };
+		4687B85F1FD989BD00768228 /* DisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4687B85E1FD989BD00768228 /* DisplayViewController.m */; };
+		4687B8661FD990F700768228 /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4687B8641FD990F700768228 /* ChatViewController.m */; };
+		4687B8671FD990F700768228 /* ChatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4687B8651FD990F700768228 /* ChatViewController.xib */; };
 		46BDA3441FD8259500E41A23 /* YMZBLEPeripheralManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 46BDA3431FD8259400E41A23 /* YMZBLEPeripheralManager.m */; };
 		46BDA34A1FD839D100E41A23 /* YMZBaseServiceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 46BDA3491FD839D100E41A23 /* YMZBaseServiceManager.m */; };
 		46BDA34F1FD843EC00E41A23 /* YMZDisplayServiceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 46BDA34E1FD843EC00E41A23 /* YMZDisplayServiceManager.m */; };
+		46BDA3A31FD96B4B00E41A23 /* BLESDKDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 46BDA3A21FD96B4B00E41A23 /* BLESDKDemoTests.m */; };
+		46BDA3B11FD96B5300E41A23 /* BLESDKDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 46BDA3B01FD96B5300E41A23 /* BLESDKDemoUITests.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		46BDA3A51FD96B4B00E41A23 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 466A9BFC1FD7A9B60098D118 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 466A9C031FD7A9B60098D118;
+			remoteInfo = BLESDKDemo;
+		};
+		46BDA3B31FD96B5300E41A23 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 466A9BFC1FD7A9B60098D118 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 466A9C031FD7A9B60098D118;
+			remoteInfo = BLESDKDemo;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		466A9C041FD7A9B60098D118 /* BLESDKDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BLESDKDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -47,6 +70,13 @@
 		466A9C4C1FD7D2050098D118 /* YMZPrinter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YMZPrinter.m; sourceTree = "<group>"; };
 		466A9C4E1FD7D7B30098D118 /* YMZGCDTimer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YMZGCDTimer.h; sourceTree = "<group>"; };
 		466A9C4F1FD7D7B30098D118 /* YMZGCDTimer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YMZGCDTimer.m; sourceTree = "<group>"; };
+		4687B85A1FD989A100768228 /* ClientViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClientViewController.h; sourceTree = "<group>"; };
+		4687B85B1FD989A100768228 /* ClientViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClientViewController.m; sourceTree = "<group>"; };
+		4687B85D1FD989BD00768228 /* DisplayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DisplayViewController.h; sourceTree = "<group>"; };
+		4687B85E1FD989BD00768228 /* DisplayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DisplayViewController.m; sourceTree = "<group>"; };
+		4687B8631FD990F700768228 /* ChatViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatViewController.h; sourceTree = "<group>"; };
+		4687B8641FD990F700768228 /* ChatViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatViewController.m; sourceTree = "<group>"; };
+		4687B8651FD990F700768228 /* ChatViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatViewController.xib; sourceTree = "<group>"; };
 		46BDA3421FD8259400E41A23 /* YMZBLEPeripheralManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YMZBLEPeripheralManager.h; sourceTree = "<group>"; };
 		46BDA3431FD8259400E41A23 /* YMZBLEPeripheralManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YMZBLEPeripheralManager.m; sourceTree = "<group>"; };
 		46BDA3481FD839D100E41A23 /* YMZBaseServiceManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YMZBaseServiceManager.h; sourceTree = "<group>"; };
@@ -54,10 +84,30 @@
 		46BDA34B1FD83F6000E41A23 /* YMZServiceManagerProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YMZServiceManagerProtocol.h; sourceTree = "<group>"; };
 		46BDA34D1FD843EC00E41A23 /* YMZDisplayServiceManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YMZDisplayServiceManager.h; sourceTree = "<group>"; };
 		46BDA34E1FD843EC00E41A23 /* YMZDisplayServiceManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YMZDisplayServiceManager.m; sourceTree = "<group>"; };
+		46BDA3A01FD96B4B00E41A23 /* BLESDKDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BLESDKDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		46BDA3A21FD96B4B00E41A23 /* BLESDKDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BLESDKDemoTests.m; sourceTree = "<group>"; };
+		46BDA3A41FD96B4B00E41A23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		46BDA3AE1FD96B5300E41A23 /* BLESDKDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BLESDKDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		46BDA3B01FD96B5300E41A23 /* BLESDKDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BLESDKDemoUITests.m; sourceTree = "<group>"; };
+		46BDA3B21FD96B5300E41A23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		466A9C011FD7A9B60098D118 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		46BDA39D1FD96B4B00E41A23 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		46BDA3AB1FD96B5300E41A23 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -71,6 +121,8 @@
 			isa = PBXGroup;
 			children = (
 				466A9C061FD7A9B60098D118 /* BLESDKDemo */,
+				46BDA3A11FD96B4B00E41A23 /* BLESDKDemoTests */,
+				46BDA3AF1FD96B5300E41A23 /* BLESDKDemoUITests */,
 				466A9C051FD7A9B60098D118 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -79,6 +131,8 @@
 			isa = PBXGroup;
 			children = (
 				466A9C041FD7A9B60098D118 /* BLESDKDemo.app */,
+				46BDA3A01FD96B4B00E41A23 /* BLESDKDemoTests.xctest */,
+				46BDA3AE1FD96B5300E41A23 /* BLESDKDemoUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -91,6 +145,13 @@
 				466A9C081FD7A9B60098D118 /* AppDelegate.m */,
 				466A9C0A1FD7A9B60098D118 /* ViewController.h */,
 				466A9C0B1FD7A9B60098D118 /* ViewController.m */,
+				4687B85A1FD989A100768228 /* ClientViewController.h */,
+				4687B85B1FD989A100768228 /* ClientViewController.m */,
+				4687B85D1FD989BD00768228 /* DisplayViewController.h */,
+				4687B85E1FD989BD00768228 /* DisplayViewController.m */,
+				4687B8631FD990F700768228 /* ChatViewController.h */,
+				4687B8641FD990F700768228 /* ChatViewController.m */,
+				4687B8651FD990F700768228 /* ChatViewController.xib */,
 				466A9C0D1FD7A9B60098D118 /* Main.storyboard */,
 				466A9C101FD7A9B60098D118 /* Assets.xcassets */,
 				466A9C121FD7A9B60098D118 /* LaunchScreen.storyboard */,
@@ -159,6 +220,24 @@
 			path = DEMO;
 			sourceTree = "<group>";
 		};
+		46BDA3A11FD96B4B00E41A23 /* BLESDKDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				46BDA3A21FD96B4B00E41A23 /* BLESDKDemoTests.m */,
+				46BDA3A41FD96B4B00E41A23 /* Info.plist */,
+			);
+			path = BLESDKDemoTests;
+			sourceTree = "<group>";
+		};
+		46BDA3AF1FD96B5300E41A23 /* BLESDKDemoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				46BDA3B01FD96B5300E41A23 /* BLESDKDemoUITests.m */,
+				46BDA3B21FD96B5300E41A23 /* Info.plist */,
+			);
+			path = BLESDKDemoUITests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -179,6 +258,42 @@
 			productReference = 466A9C041FD7A9B60098D118 /* BLESDKDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
+		46BDA39F1FD96B4B00E41A23 /* BLESDKDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 46BDA3A91FD96B4B00E41A23 /* Build configuration list for PBXNativeTarget "BLESDKDemoTests" */;
+			buildPhases = (
+				46BDA39C1FD96B4B00E41A23 /* Sources */,
+				46BDA39D1FD96B4B00E41A23 /* Frameworks */,
+				46BDA39E1FD96B4B00E41A23 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				46BDA3A61FD96B4B00E41A23 /* PBXTargetDependency */,
+			);
+			name = BLESDKDemoTests;
+			productName = BLESDKDemoTests;
+			productReference = 46BDA3A01FD96B4B00E41A23 /* BLESDKDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		46BDA3AD1FD96B5300E41A23 /* BLESDKDemoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 46BDA3B51FD96B5300E41A23 /* Build configuration list for PBXNativeTarget "BLESDKDemoUITests" */;
+			buildPhases = (
+				46BDA3AA1FD96B5300E41A23 /* Sources */,
+				46BDA3AB1FD96B5300E41A23 /* Frameworks */,
+				46BDA3AC1FD96B5300E41A23 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				46BDA3B41FD96B5300E41A23 /* PBXTargetDependency */,
+			);
+			name = BLESDKDemoUITests;
+			productName = BLESDKDemoUITests;
+			productReference = 46BDA3AE1FD96B5300E41A23 /* BLESDKDemoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -191,6 +306,16 @@
 					466A9C031FD7A9B60098D118 = {
 						CreatedOnToolsVersion = 9.1;
 						ProvisioningStyle = Automatic;
+					};
+					46BDA39F1FD96B4B00E41A23 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 466A9C031FD7A9B60098D118;
+					};
+					46BDA3AD1FD96B5300E41A23 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 466A9C031FD7A9B60098D118;
 					};
 				};
 			};
@@ -208,6 +333,8 @@
 			projectRoot = "";
 			targets = (
 				466A9C031FD7A9B60098D118 /* BLESDKDemo */,
+				46BDA39F1FD96B4B00E41A23 /* BLESDKDemoTests */,
+				46BDA3AD1FD96B5300E41A23 /* BLESDKDemoUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -219,7 +346,22 @@
 			files = (
 				466A9C141FD7A9B60098D118 /* LaunchScreen.storyboard in Resources */,
 				466A9C111FD7A9B60098D118 /* Assets.xcassets in Resources */,
+				4687B8671FD990F700768228 /* ChatViewController.xib in Resources */,
 				466A9C0F1FD7A9B60098D118 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		46BDA39E1FD96B4B00E41A23 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		46BDA3AC1FD96B5300E41A23 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,10 +383,42 @@
 				46BDA34F1FD843EC00E41A23 /* YMZDisplayServiceManager.m in Sources */,
 				466A9C501FD7D7B30098D118 /* YMZGCDTimer.m in Sources */,
 				46BDA34A1FD839D100E41A23 /* YMZBaseServiceManager.m in Sources */,
+				4687B85C1FD989A100768228 /* ClientViewController.m in Sources */,
+				4687B8661FD990F700768228 /* ChatViewController.m in Sources */,
+				4687B85F1FD989BD00768228 /* DisplayViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		46BDA39C1FD96B4B00E41A23 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				46BDA3A31FD96B4B00E41A23 /* BLESDKDemoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		46BDA3AA1FD96B5300E41A23 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				46BDA3B11FD96B5300E41A23 /* BLESDKDemoUITests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		46BDA3A61FD96B4B00E41A23 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 466A9C031FD7A9B60098D118 /* BLESDKDemo */;
+			targetProxy = 46BDA3A51FD96B4B00E41A23 /* PBXContainerItemProxy */;
+		};
+		46BDA3B41FD96B5300E41A23 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 466A9C031FD7A9B60098D118 /* BLESDKDemo */;
+			targetProxy = 46BDA3B31FD96B5300E41A23 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		466A9C0D1FD7A9B60098D118 /* Main.storyboard */ = {
@@ -374,10 +548,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: 571930389@qq.com (C5RHYLYYFS)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 44VW2R857H;
 				INFOPLIST_FILE = BLESDKDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = YMZ.BLESDKDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -390,15 +566,75 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: 571930389@qq.com (C5RHYLYYFS)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 44VW2R857H;
 				INFOPLIST_FILE = BLESDKDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = YMZ.BLESDKDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		46BDA3A71FD96B4B00E41A23 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 44VW2R857H;
+				INFOPLIST_FILE = BLESDKDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = YMZ.BLESDKDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BLESDKDemo.app/BLESDKDemo";
+			};
+			name = Debug;
+		};
+		46BDA3A81FD96B4B00E41A23 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 44VW2R857H;
+				INFOPLIST_FILE = BLESDKDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = YMZ.BLESDKDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BLESDKDemo.app/BLESDKDemo";
+			};
+			name = Release;
+		};
+		46BDA3B61FD96B5300E41A23 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 44VW2R857H;
+				INFOPLIST_FILE = BLESDKDemoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = YMZ.BLESDKDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = BLESDKDemo;
+			};
+			name = Debug;
+		};
+		46BDA3B71FD96B5300E41A23 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 44VW2R857H;
+				INFOPLIST_FILE = BLESDKDemoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = YMZ.BLESDKDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = BLESDKDemo;
 			};
 			name = Release;
 		};
@@ -419,6 +655,24 @@
 			buildConfigurations = (
 				466A9C311FD7A9B60098D118 /* Debug */,
 				466A9C321FD7A9B60098D118 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		46BDA3A91FD96B4B00E41A23 /* Build configuration list for PBXNativeTarget "BLESDKDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				46BDA3A71FD96B4B00E41A23 /* Debug */,
+				46BDA3A81FD96B4B00E41A23 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		46BDA3B51FD96B5300E41A23 /* Build configuration list for PBXNativeTarget "BLESDKDemoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				46BDA3B61FD96B5300E41A23 /* Debug */,
+				46BDA3B71FD96B5300E41A23 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

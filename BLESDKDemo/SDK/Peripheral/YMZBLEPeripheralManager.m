@@ -115,7 +115,7 @@
     id<YMZServiceManagerProtocol> serviceManager = [self serviceByServiceUUIDSting:characteristic.service.UUID.UUIDString];
     if (serviceManager) {
         //已接收到central对serviceManager服务的characteristic特征的读请求
-        [serviceManager didReceiveReadRequest:request];
+        [serviceManager peripheralManager:peripheral didReceiveReadRequest:request];
     }
 }
 - (void)peripheralManager:(CBPeripheralManager *)peripheral didReceiveWriteRequests:(NSArray<CBATTRequest *> *)requests {
@@ -125,7 +125,7 @@
         id<YMZServiceManagerProtocol> serviceManager = [self serviceByServiceUUIDSting:characteristic.service.UUID.UUIDString];
         if (serviceManager) {
             //已接收到central对serviceManager服务的characteristic特征的写请求
-            [serviceManager didReceiveWriteRequest:request];
+            [serviceManager peripheralManager:peripheral didReceiveWriteRequest:request];
         }
     }
 }
@@ -138,8 +138,8 @@
 - (void)peripheralManager:(CBPeripheralManager *)peripheral didUnpublishL2CAPChannel:(CBL2CAPPSM)PSM error:(nullable NSError *)error {
     
 }
-- (void)peripheralManager:(CBPeripheralManager *)peripheral didOpenL2CAPChannel:(nullable CBL2CAPChannel *)channel error:(nullable NSError *)error {
-    
-}
+//- (void)peripheralManager:(CBPeripheralManager *)peripheral didOpenL2CAPChannel:(nullable CBL2CAPChannel *)channel error:(nullable NSError *)error {
+//
+//}
 
 @end

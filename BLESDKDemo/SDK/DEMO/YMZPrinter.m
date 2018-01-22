@@ -8,9 +8,9 @@
 
 #import "YMZPrinter.h"
 
-#define UUIDSTR_ISSC_PROPRIETARY_SERVICE @"49535343-FE7D-4AE5-8FA9-9FAFD205E455"
-#define UUIDSTR_ISSC_TRANS_TX @"49535343-8841-43F4-A8D4-ECBE34729BB3" //发
-#define UUIDSTR_ISSC_TRANS_RX @"49535343-1E4D-4BD9-BA61-23C647249616" //收
+#define UUIDSTR_ISSC_PROPRIETARY_SERVICE @"FFF0"
+#define UUIDSTR_ISSC_TRANS_TX @"FFF1" //发
+#define UUIDSTR_ISSC_TRANS_RX @"FFF2" //收
 
 @implementation YMZPrinter{
     CBCharacteristic *_transTxCharacteristic; //发送特征
@@ -27,6 +27,9 @@
     [self writeCommandToCharacteristic:_transTxCharacteristic command:command writeDataBlock:writeDataBlock responseBlock:responseBlock];
 }
 
+- (NSArray<CBUUID *> *_Nullable)servicesUUID {
+    return @[[CBUUID UUIDWithString:UUIDSTR_ISSC_PROPRIETARY_SERVICE]];
+}
 #pragma mark - 必要协议方法
 - (void)configCharacteristicsWithService:(CBService *_Nonnull)service {
     
