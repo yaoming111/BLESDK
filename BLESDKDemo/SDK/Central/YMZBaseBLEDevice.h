@@ -11,7 +11,7 @@
 #import "YMZBLEDeviceProtocol.h"
 
 #define BLEErrorDomain @"BLEErrorDomain"
-/*！写数据回调 code 501:已经正在发送数据中 请等待 502:写数据超时超时  503：外设设备初始化未完成 504:命令查询超时无返回 505:没有建立连接*/
+/*！写数据回调 code 501:已经正在发送数据中 请等待 502:写数据超时超时  503：外设设备初始化未完成 504:命令查询超时无返回 505:没有建立连接 510:指定特征为空*/
 typedef void (^YMZWriteDataBlock)(BOOL success, NSError *_Nullable error);
 /*! 请求（有返回值的命令）数据回调*/
 typedef void (^YMZResponseBlock)(NSData *_Nullable response, NSError *_Nullable error);
@@ -35,4 +35,12 @@ typedef void (^YMZResponseBlock)(NSData *_Nullable response, NSError *_Nullable 
  @param responseBlock 硬件响应信息            回调在非UI线程 需要刷新UI请切换UI线程
  */
 - (void)writeCommandToCharacteristic:(CBCharacteristic *_Nonnull)characteristic command:(NSData *_Nonnull)command writeDataBlock:(YMZWriteDataBlock _Nullable)writeDataBlock responseBlock:(YMZResponseBlock _Nullable)responseBlock;
+/*! */
+/**
+ 读指定特征的值
+
+ @param characteristic 指定的特征
+ @param responseBlock 读到值的回调
+ */
+- (void)readValueForCharacteristic:(CBCharacteristic *)characteristic responseBlock:(YMZResponseBlock)responseBlock;
 @end

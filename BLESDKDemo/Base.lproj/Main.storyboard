@@ -27,24 +27,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ulq-KW-WDS">
-                                <rect key="frame" x="41" y="293" width="123" height="80"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.68586210604427222" green="1" blue="0.66959629035755386" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="获取当前时间"/>
-                                <connections>
-                                    <action selector="getCurrentTime:" destination="ICi-Pm-zNV" eventType="touchUpInside" id="Zyb-u0-0hL"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ml-gq-kiQ">
-                                <rect key="frame" x="218" y="293" width="123" height="80"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.68586210599999997" green="1" blue="0.66959629040000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="聊天"/>
-                                <connections>
-                                    <action selector="chat:" destination="ICi-Pm-zNV" eventType="touchUpInside" id="r86-fs-d7H"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>

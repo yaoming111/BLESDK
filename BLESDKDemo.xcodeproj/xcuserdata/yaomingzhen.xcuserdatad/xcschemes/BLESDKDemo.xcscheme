@@ -33,7 +33,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "466A9C1B1FD7A9B60098D118"
+               BlueprintIdentifier = "46BDA39F1FD96B4B00E41A23"
                BuildableName = "BLESDKDemoTests.xctest"
                BlueprintName = "BLESDKDemoTests"
                ReferencedContainer = "container:BLESDKDemo.xcodeproj">
@@ -43,7 +43,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "466A9C261FD7A9B60098D118"
+               BlueprintIdentifier = "46BDA3AD1FD96B5300E41A23"
                BuildableName = "BLESDKDemoUITests.xctest"
                BlueprintName = "BLESDKDemoUITests"
                ReferencedContainer = "container:BLESDKDemo.xcodeproj">

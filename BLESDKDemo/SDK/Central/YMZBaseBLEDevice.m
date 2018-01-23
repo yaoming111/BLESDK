@@ -15,7 +15,6 @@ typedef NS_OPTIONS(NSUInteger, YMZBleBaseRequestOptions) {
     YMZBleBaseRequestOptions_sendSubdata = 1 << 1,
 };
 
-
 @interface YMZBleBaseRequest:NSObject
 /*! 请求对应的特征*/
 @property (nonatomic, strong) CBCharacteristic *characteristic;
@@ -213,8 +212,6 @@ typedef NS_OPTIONS(NSUInteger, YMZBleBaseRequestOptions) {
 
 - (void)invocationWriteCommandToCharacteristic:(CBCharacteristic *)characteristic command:(NSData *_Nonnull)command writeDataBlock:(YMZWriteDataBlock _Nullable)writeDataBlock responseBlock:(YMZResponseBlock _Nullable)responseBlock {
     YMZResponseBlock theResponseBlock = ^(NSData *response, NSError *error) {
-        [_responseDic removeObjectForKey:characteristic.UUID.UUIDString];
-        
         [YMZGCDTimer GCD_CancelTimer:_responseTimer];
         _responseTimer = nil;
         if (responseBlock) {
@@ -252,7 +249,7 @@ typedef NS_OPTIONS(NSUInteger, YMZBleBaseRequestOptions) {
         return;
     }
     if (theResponseBlock) {
-        [_responseDic setObject:theResponseBlock forKey:characteristic.UUID.UUIDString];
+        _responseDic[characteristic.UUID.UUIDString] = theResponseBlock;
     }
     
     _responseTimer = [YMZGCDTimer GCD_StartTimerWithTimeInterval:5 repeats:NO block:^{
@@ -326,6 +323,36 @@ typedef NS_OPTIONS(NSUInteger, YMZBleBaseRequestOptions) {
     }];
     
 }
+#pragma mark - 读指定特征内容
+- (void)readValueForCharacteristic:(CBCharacteristic *)characteristic responseBlock:(YMZResponseBlock)responseBlock {
+    if (self.peripheral.state != CBPeripheralStateConnected) {
+        NSError *error = [NSError errorWithDomain:BLEErrorDomain code:505 userInfo:@{ @"discription" : @"外设设备没有建立连接" }];
+        if (responseBlock) {
+            responseBlock(nil, error);
+        }
+        
+        return;
+    }
+    
+    if (!characteristic) {
+        NSError *error = [NSError errorWithDomain:BLEErrorDomain code:503 userInfo:@{ @"discription" : @"外设设备初始化未完成" }];
+        if (responseBlock) {
+            responseBlock(nil, error);
+        }
+        return;
+    }
+    
+    if(!characteristic) {
+        if (responseBlock) {
+            NSError *error = [NSError errorWithDomain:BLEErrorDomain code:510 userInfo:@{ @"discription" : @"指定特征为空"}];
+            responseBlock(nil, error);
+        }
+        return;
+    }
+    _responseDic[characteristic.UUID.UUIDString] = responseBlock;
+    [self.peripheral readValueForCharacteristic:characteristic];
+}
+
 #pragma mark - 私有方法
 - (void)configCharacteristicsWithService:(CBService *_Nonnull)service {
     NSAssert(0, @"子类必须实现并正确配置");
@@ -383,6 +410,7 @@ typedef NS_OPTIONS(NSUInteger, YMZBleBaseRequestOptions) {
     YMZResponseBlock responseBlock = _responseDic[characteristic.UUID.UUIDString];
     
     if (responseBlock) {
+        _responseDic[characteristic.UUID.UUIDString] = nil;
         responseBlock(characteristic.value, error);
     }
     

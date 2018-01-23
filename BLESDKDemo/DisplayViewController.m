@@ -28,19 +28,12 @@
             displayServiceManager.delegate = self;
             [weakSelf.peripheralManager didAddServiceWithServiceManager:displayServiceManager];
         }
-    }];}
+    }];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-- (IBAction)getCurrentTime:(id)sender {
-    
-}
-
-- (IBAction)chat:(id)sender {
-    
 }
 
 #pragma mark - YMZDisplayServiceManagerDelegate

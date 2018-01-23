@@ -25,4 +25,11 @@
  @param responseBlock 硬件响应信息
  */
 - (void)writeCommand:(NSData *_Nonnull)command writeDataBlock:(YMZWriteDataBlock _Nullable)writeDataBlock responseBlock:(YMZResponseBlock _Nullable)responseBlock;
+
+/**
+ 读数据
+
+ @param responseBlock 响应信息
+ */
+- (void)readDataWithResponseBlock:(YMZResponseBlock _Nullable )responseBlock;
 @end

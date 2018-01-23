@@ -30,6 +30,12 @@
 - (NSArray<CBUUID *> *_Nullable)servicesUUID {
     return @[[CBUUID UUIDWithString:UUIDSTR_ISSC_PROPRIETARY_SERVICE]];
 }
+
+- (void)readDataWithResponseBlock:(YMZResponseBlock)responseBlock {
+    
+    [self readValueForCharacteristic:_transRxCharacteristic responseBlock:responseBlock];
+}
+
 #pragma mark - 必要协议方法
 - (void)configCharacteristicsWithService:(CBService *_Nonnull)service {
     

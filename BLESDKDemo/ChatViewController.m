@@ -22,11 +22,13 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
+
 - (IBAction)connect:(id)sender {
     [self.printer connectWithResultBlock:^(BOOL success, NSString * _Nullable errorDescription) {
  
     }];
 }
+
 - (IBAction)disconnect:(id)sender {
     [self.printer disConnectWithResultBlock:^(BOOL success, NSString * _Nullable errorDescription) {
         
@@ -35,9 +37,18 @@
         
     }];
 }
+
 - (IBAction)sendMesage:(id)sender {
     [self.printer subcontractWriteValue:[self.tf.text dataUsingEncoding:NSUTF8StringEncoding] writeDataBlock:^(BOOL success, NSError * _Nullable error) {
         
+    }];
+}
+
+- (IBAction)getCurrentTime:(id)sender {
+    [self.printer readDataWithResponseBlock:^(NSData * _Nullable response, NSError * _Nullable error) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.tf.text = [[NSString alloc] initWithData:response encoding:NSUTF8StringEncoding];
+        });
     }];
 }
 
