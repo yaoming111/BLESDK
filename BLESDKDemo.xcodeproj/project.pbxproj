@@ -140,7 +140,8 @@
 		466A9C061FD7A9B60098D118 /* BLESDKDemo */ = {
 			isa = PBXGroup;
 			children = (
-				466A9C3A1FD7AA8F0098D118 /* SDK */,
+				46719987201727CA00A6B0F6 /* DEMO */,
+				466A9C3A1FD7AA8F0098D118 /* BLESDK */,
 				466A9C071FD7A9B60098D118 /* AppDelegate.h */,
 				466A9C081FD7A9B60098D118 /* AppDelegate.m */,
 				466A9C0A1FD7A9B60098D118 /* ViewController.h */,
@@ -161,17 +162,16 @@
 			path = BLESDKDemo;
 			sourceTree = "<group>";
 		};
-		466A9C3A1FD7AA8F0098D118 /* SDK */ = {
+		466A9C3A1FD7AA8F0098D118 /* BLESDK */ = {
 			isa = PBXGroup;
 			children = (
-				466A9C461FD7C68A0098D118 /* DEMO */,
 				46BDA3411FD8255500E41A23 /* Central */,
 				46BDA3471FD8398600E41A23 /* Peripheral */,
 			);
-			path = SDK;
+			path = BLESDK;
 			sourceTree = "<group>";
 		};
-		466A9C461FD7C68A0098D118 /* DEMO */ = {
+		466A9C461FD7C68A0098D118 /* CentralDemo */ = {
 			isa = PBXGroup;
 			children = (
 				466A9C471FD7C6B00098D118 /* YMZPrinterManager.h */,
@@ -179,7 +179,17 @@
 				466A9C4B1FD7D2050098D118 /* YMZPrinter.h */,
 				466A9C4C1FD7D2050098D118 /* YMZPrinter.m */,
 			);
-			path = DEMO;
+			path = CentralDemo;
+			sourceTree = "<group>";
+		};
+		46719987201727CA00A6B0F6 /* DEMO */ = {
+			isa = PBXGroup;
+			children = (
+				46BDA34C1FD8431F00E41A23 /* PeripheralDemo */,
+				466A9C461FD7C68A0098D118 /* CentralDemo */,
+			);
+			name = DEMO;
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 		46BDA3411FD8255500E41A23 /* Central */ = {
@@ -201,7 +211,6 @@
 		46BDA3471FD8398600E41A23 /* Peripheral */ = {
 			isa = PBXGroup;
 			children = (
-				46BDA34C1FD8431F00E41A23 /* DEMO */,
 				46BDA3421FD8259400E41A23 /* YMZBLEPeripheralManager.h */,
 				46BDA3431FD8259400E41A23 /* YMZBLEPeripheralManager.m */,
 				46BDA3481FD839D100E41A23 /* YMZBaseServiceManager.h */,
@@ -211,13 +220,13 @@
 			path = Peripheral;
 			sourceTree = "<group>";
 		};
-		46BDA34C1FD8431F00E41A23 /* DEMO */ = {
+		46BDA34C1FD8431F00E41A23 /* PeripheralDemo */ = {
 			isa = PBXGroup;
 			children = (
 				46BDA34D1FD843EC00E41A23 /* YMZDisplayServiceManager.h */,
 				46BDA34E1FD843EC00E41A23 /* YMZDisplayServiceManager.m */,
 			);
-			path = DEMO;
+			path = PeripheralDemo;
 			sourceTree = "<group>";
 		};
 		46BDA3A11FD96B4B00E41A23 /* BLESDKDemoTests */ = {

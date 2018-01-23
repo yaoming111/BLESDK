@@ -107,11 +107,13 @@
     }
     [device didDisConnected];
 }
+
 - (id<YMZBLEDeviceProtocol>)bleDeviceByIdentifier:(NSString *)identifier {
     id<YMZBLEDeviceProtocol> device = [[self.didDiscoverPeripherals filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"peripheral.identifier.UUIDString = %@", identifier]] firstObject];
     
     return device;
 }
+
 #pragma mark - CBCentralManagerDelegate
 - (void)centralManagerDidUpdateState:(CBCentralManager *)central {
     if ([self.delegate respondsToSelector:@selector(BLEManager:centralManagerDidUpdateState:)]) {
@@ -151,9 +153,6 @@
 - (void)centralManager:(CBCentralManager *)central didConnectPeripheral:(CBPeripheral *)peripheral {
     
     id<YMZBLEDeviceProtocol> device = [self bleDeviceByIdentifier:peripheral.identifier.UUIDString];
-    if (!device) {
-        NSAssert(0, @"bleDeviceByIdentifier 方法有bug");
-    }
     [self addDidConnictedDevice:device];
 }
 
@@ -170,7 +169,6 @@
         [central connectPeripheral:device.peripheral options:nil];
     }
 }
-
 
 dispatch_queue_t centralManagerDelegateQueue() {
     static dispatch_queue_t delegateQueue = nil;

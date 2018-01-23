@@ -42,5 +42,5 @@ typedef void (^YMZResponseBlock)(NSData *_Nullable response, NSError *_Nullable 
  @param characteristic 指定的特征
  @param responseBlock 读到值的回调
  */
-- (void)readValueForCharacteristic:(CBCharacteristic *)characteristic responseBlock:(YMZResponseBlock)responseBlock;
+- (void)readValueForCharacteristic:(CBCharacteristic *_Nonnull)characteristic responseBlock:(YMZResponseBlock _Nullable )responseBlock;
 @end

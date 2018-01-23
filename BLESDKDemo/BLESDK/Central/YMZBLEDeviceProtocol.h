@@ -24,7 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 /*! 对中心设备的一个引用*/
 @property (nonatomic, weak)     CBCentralManager *centralManager;
 NS_ASSUME_NONNULL_END
-/*! 异常断开重连 默认 NO  手动断开时请先赋值为NO防止断开后重新连接*/
+/*! 异常断开重连 默认 NO  手动断开时请先赋值为NO防止断开后重新连接   ⚠️：手动调用断开时会被置为NO，如需保持自动重连请在连接前赋值YES*/
 @property (nonatomic, assign) BOOL reconnect;
 @optional
 /*! 发起连接*/
