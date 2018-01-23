@@ -10,19 +10,45 @@
 #import <CoreBluetooth/CoreBluetooth.h>
 #import "YMZGCDTimer.h"
 
+typedef NS_OPTIONS(NSUInteger, YMZBleBaseRequestOptions) {
+    YMZBleBaseRequestOptions_sendData = 1 << 0,
+    YMZBleBaseRequestOptions_sendSubdata = 1 << 1,
+};
+
+
+@interface YMZBleBaseRequest:NSObject
+/*! 请求对应的特征*/
+@property (nonatomic, strong) CBCharacteristic *characteristic;
+/*! 要发送的数据*/
+@property (nonatomic, strong) NSData *data;
+/*! 发送结束回调*/
+@property (nonatomic, copy) YMZWriteDataBlock callback;
+/*! 外设返回值回调*/
+@property (nonatomic, copy) YMZResponseBlock responseBlock;
+/*! 是否需要响应*/
+@property (nonatomic, assign) CBCharacteristicWriteType type;
+
+@property (nonatomic, assign) YMZBleBaseRequestOptions options;
+@end
+
+@implementation YMZBleBaseRequest
+
+@end
+
 @interface YMZBaseBLEDevice()
 @property (nonatomic, copy) ConnectBlock    connectResultBlock;
 @property (nonatomic, copy) DisconnectBlock disConnectResultBlock;
-
 @end
 
 @implementation YMZBaseBLEDevice{
     NSMutableDictionary *_writeDataDic;
     NSMutableDictionary *_responseDic;
-    
-    NSMutableArray<NSInvocation *> *_subcontractWriteValueInvocationQueue;
-    NSMutableArray<NSInvocation *> *_writeValueInvocationQueue;
-    NSMutableArray<NSInvocation *> *_writeCommandInvocationQueue;
+    /*! 要分包发送的原始长数据*/
+    NSMutableArray<YMZBleBaseRequest *> *_subcontractWriteValueInvocationQueue;
+    /*! 已分包的数据段*/
+    NSMutableArray<YMZBleBaseRequest *> *_writeValueInvocationQueue;
+    /*! 要发送的命令数据*/
+    NSMutableArray<YMZBleBaseRequest *> *_writeCommandInvocationQueue;
     
     dispatch_source_t _writeDataTimer;
     dispatch_source_t _responseTimer;
@@ -76,6 +102,7 @@
 
 #pragma mark - 数据交互
 - (void)subcontractWriteValueToCharacteristic:(CBCharacteristic *_Nonnull)characteristic value:(NSData *_Nonnull)data writeDataBlock:(YMZWriteDataBlock _Nullable)writeDataBlock {
+
     if (self.peripheral.state != CBPeripheralStateConnected) {
         NSError *error = [NSError errorWithDomain:BLEErrorDomain code:505 userInfo:@{ @"discription" : @"外设设备没有建立连接" }];
         
@@ -94,22 +121,19 @@
         return;
     }
     
-    NSMethodSignature *methodSignature = [self methodSignatureForSelector:@selector(invocationSubcontractWriteValueToCharacteristic:value:writeDataBlock:)];
-    NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:methodSignature];
-    [invocation setTarget:self];
-    [invocation setSelector:@selector(invocationSubcontractWriteValueToCharacteristic:value:writeDataBlock:)];
-    [invocation setArgument:&characteristic atIndex:2];
-    [invocation setArgument:&data atIndex:3];
-    [invocation setArgument:&writeDataBlock atIndex:4];
-    [invocation retainArguments];
+    YMZBleBaseRequest *request = [[YMZBleBaseRequest alloc] init];
+    request.characteristic = characteristic;
+    request.data = data;
+    request.type = CBCharacteristicWriteWithoutResponse;
+    request.callback = writeDataBlock;
+    request.options = YMZBleBaseRequestOptions_sendData;
     
-    dispatch_async(writerDataQueue(), ^{
-        [_subcontractWriteValueInvocationQueue addObject:invocation];
-        
-        if (_subcontractWriteValueInvocationQueue.count == 1) {
-            [invocation invoke];
-        }
-    });
+    [_subcontractWriteValueInvocationQueue addObject:request];
+    if (_subcontractWriteValueInvocationQueue.count == 1) {
+        dispatch_async(writerDataQueue(), ^{
+             [self invocationSubcontractWriteValueToCharacteristic:request.characteristic value:request.data writeDataBlock:request.callback];
+        });
+    }
 }
 
 - (void)invocationSubcontractWriteValueToCharacteristic:(CBCharacteristic *)characteristic value:(NSData *_Nonnull)data writeDataBlock:(YMZWriteDataBlock _Nullable)writeDataBlock {
@@ -118,9 +142,8 @@
     NSUInteger dataLength = [data length];
     NSUInteger outCount = 0;
     NSUInteger sendCount = ceil((double_t)dataLength / limitLength);
-    
-    dispatch_semaphore_t semaphore = dispatch_semaphore_create(1);
-    
+   
+    dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
     for (NSUInteger i = 0; i < sendCount; i++) {
         if ((i + 1) * limitLength > dataLength) {
             outCount = (i + 1) * limitLength - dataLength;
@@ -142,10 +165,8 @@
             [_subcontractWriteValueInvocationQueue removeObjectAtIndex:0];
         }
         if (_subcontractWriteValueInvocationQueue.count > 0) {
-            NSInvocation *invocation = _subcontractWriteValueInvocationQueue.firstObject;
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), writerDataQueue(), ^{
-                [invocation invoke];
-            });
+            YMZBleBaseRequest *request = _subcontractWriteValueInvocationQueue.firstObject;
+            [self invocationSubcontractWriteValueToCharacteristic:request.characteristic value:request.data writeDataBlock:request.callback];
         }
     }
 }
@@ -177,19 +198,16 @@
         }
         return;
     }
-    NSMethodSignature *methodSignature = [self methodSignatureForSelector:@selector(invocationWriteCommandToCharacteristic:command:writeDataBlock:responseBlock:)];
-    NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:methodSignature];
-    [invocation setTarget:self];
-    [invocation setSelector:@selector(invocationWriteCommandToCharacteristic:command:writeDataBlock:responseBlock:)];
-    [invocation setArgument:&characteristic atIndex:2];
-    [invocation setArgument:&command atIndex:3];
-    [invocation setArgument:&writeDataBlock atIndex:4];
-    [invocation setArgument:&responseBlock atIndex:5];
-    [invocation retainArguments];
     
-    [_writeCommandInvocationQueue addObject:invocation];
+    YMZBleBaseRequest *request = [[YMZBleBaseRequest alloc] init];
+    request.characteristic = characteristic;
+    request.data = command;
+    request.type = CBCharacteristicWriteWithResponse;
+    request.callback = writeDataBlock;
+    request.responseBlock = responseBlock;
+    [_writeCommandInvocationQueue addObject:request];
     if (_writeCommandInvocationQueue.count == 1) {
-        [invocation invoke];
+        [self invocationWriteCommandToCharacteristic:request.characteristic command:request.data writeDataBlock:request.callback responseBlock:request.responseBlock];
     }
 }
 
@@ -205,8 +223,8 @@
             }
             
             if (_writeCommandInvocationQueue.count > 0) {
-                NSInvocation *invocation = _writeCommandInvocationQueue.firstObject;
-                [invocation invoke];
+                YMZBleBaseRequest *request = _writeCommandInvocationQueue.firstObject;
+                [self invocationWriteCommandToCharacteristic:request.characteristic command:request.data writeDataBlock:request.callback responseBlock:request.responseBlock];
             }
             responseBlock(response, error);
         }
@@ -253,20 +271,16 @@
 
 - (void)writeValueToCharacteristic:(CBCharacteristic *)characteristic value:(NSData *)data type:(CBCharacteristicWriteType)type writeDataBlock:(YMZWriteDataBlock)writeDataBlock {
     
-    NSMethodSignature *methodSignature = [self methodSignatureForSelector:@selector(invocationWriteValueToCharacteristic:value:type:writeDataBlock:)];
+    YMZBleBaseRequest *request = [[YMZBleBaseRequest alloc] init];
+    request.characteristic = characteristic;
+    request.data = data;
+    request.type = type;
+    request.callback = writeDataBlock;
+    request.options = YMZBleBaseRequestOptions_sendSubdata;
     
-    NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:methodSignature];
-    [invocation setTarget:self];
-    [invocation setSelector:@selector(invocationWriteValueToCharacteristic:value:type:writeDataBlock:)];
-    [invocation setArgument:&characteristic atIndex:2];
-    [invocation setArgument:&data atIndex:3];
-    [invocation setArgument:&type atIndex:4];
-    [invocation setArgument:&writeDataBlock atIndex:5];
-    [invocation retainArguments];
-    
-    [_subcontractWriteValueInvocationQueue addObject:invocation];
+    [_writeValueInvocationQueue addObject:request];
     if (_writeValueInvocationQueue.count == 1) {
-        [invocation invoke];
+        [self invocationWriteValueToCharacteristic:request.characteristic value:request.data type:type writeDataBlock:request.callback];
     }
 }
 
@@ -286,8 +300,8 @@
         }
         
         if (_writeValueInvocationQueue.count > 0) {
-            NSInvocation *invocation = _writeValueInvocationQueue.firstObject;
-            [invocation invoke];
+            YMZBleBaseRequest *request = _writeValueInvocationQueue.firstObject;
+            [self invocationWriteValueToCharacteristic:request.characteristic value:request.data type:request.type writeDataBlock:request.callback];
         }
     };
     
@@ -397,10 +411,6 @@
 - (void)peripheralIsReadyToSendWriteWithoutResponse:(CBPeripheral *)peripheral {
     
 }
-//- (void)peripheral:(CBPeripheral *)peripheral didOpenL2CAPChannel:(nullable CBL2CAPChannel *)channel error:(nullable NSError *)error {
-//    
-//}
-
 
 dispatch_queue_t writerDataQueue() {
     static dispatch_queue_t writerDataQueue;
