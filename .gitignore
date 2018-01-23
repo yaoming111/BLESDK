@@ -14,7 +14,7 @@ DerivedData/
 !default.perspectivev3
 xcuserdata/*
 !xcuserdata/findertiwk.xcuserdatad/*
-Cashier.xcodeproj/xcuserdata/*
+BLESDKDemo.xcodeproj/xcuserdata/*
 
 *.moved-aside
 *.xcuserstate
