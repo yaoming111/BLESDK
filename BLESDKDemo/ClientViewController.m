@@ -10,7 +10,7 @@
 #import "YMZPrinterManager.h"
 #import "ChatViewController.h"
 
-@interface ClientViewController ()<UITableViewDelegate, UITableViewDataSource>
+@interface ClientViewController ()<UITableViewDelegate, UITableViewDataSource, YMZPrinterManagerDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) YMZPrinterManager *printerManager;
 
@@ -20,11 +20,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.printerManager = [[YMZPrinterManager alloc]init];
+    self.printerManager = [[YMZPrinterManager alloc]initWithDelegate:self];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+}
+
+- (void)printerManager:(YMZPrinterManager *)printerManager didDiscoverDevice:(id<YMZBLEDeviceProtocol, CBPeripheralDelegate>)device {
+    
+    dispatch_sync(dispatch_get_main_queue(), ^{
         [self.tableView reloadData];
     });
 }

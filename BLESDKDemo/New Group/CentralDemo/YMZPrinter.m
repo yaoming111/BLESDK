@@ -27,7 +27,9 @@
     [self writeCommandToCharacteristic:_transTxCharacteristic command:command writeDataBlock:writeDataBlock responseBlock:responseBlock];
 }
 
+#pragma mark - 必要协议方法
 - (NSArray<CBUUID *> *_Nullable)servicesUUID {
+    
     return @[[CBUUID UUIDWithString:UUIDSTR_ISSC_PROPRIETARY_SERVICE]];
 }
 
@@ -36,7 +38,6 @@
     [self readValueForCharacteristic:_transRxCharacteristic responseBlock:responseBlock];
 }
 
-#pragma mark - 必要协议方法
 - (void)configCharacteristicsWithService:(CBService *_Nonnull)service {
     
     if ([service.UUID.UUIDString isEqualToString:UUIDSTR_ISSC_PROPRIETARY_SERVICE]) {

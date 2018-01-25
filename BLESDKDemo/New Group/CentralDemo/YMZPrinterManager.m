@@ -16,8 +16,9 @@
 
 @implementation YMZPrinterManager
 
-- (instancetype)init {
+- (instancetype)initWithDelegate:(id<YMZPrinterManagerDelegate>)delegate {
     if (self = [super init]) {
+        _delegate = delegate;
         _manager = [[YMZBLEManager alloc] initWithDelegate:self datasource:self];
     }
     return self;
@@ -36,6 +37,9 @@
 
 - (void)BLEManager:(YMZBLEManager *)BLEManager didDiscoverDevice:(id<YMZBLEDeviceProtocol, CBPeripheralDelegate>)device {
     //此处可以用来更新外设列表
+    if ([self.delegate respondsToSelector:@selector(printerManager:didDiscoverDevice:)]) {
+        [self.delegate printerManager:self didDiscoverDevice:device];
+    }
 }
 #pragma mark - CHDBLEManagerDatasource
 
