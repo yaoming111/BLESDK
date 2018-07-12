@@ -56,6 +56,7 @@ typedef NS_OPTIONS(NSUInteger, YMZBleBaseRequestOptions) {
 @synthesize peripheral;
 @synthesize centralManager;
 @synthesize reconnect;
+@synthesize neededReconnect;
 
 - (instancetype)init {
     if (self = [super init]) {
@@ -73,6 +74,9 @@ typedef NS_OPTIONS(NSUInteger, YMZBleBaseRequestOptions) {
 #pragma mark - 主动调用
 /*! 发起连接*/
 - (void)connectWithResultBlock:(ConnectBlock)resultBlock {
+    if (self.reconnect) {
+        self.neededReconnect = YES;
+    }
     if (self.peripheral.state != CBPeripheralStateDisconnected) {
         if (resultBlock) {
             if (self.peripheral.state == CBPeripheralStateConnected) {
@@ -88,7 +92,9 @@ typedef NS_OPTIONS(NSUInteger, YMZBleBaseRequestOptions) {
 }
 /*! 断开连接*/
 - (void)disConnectWithResultBlock:(DisconnectBlock)resultBlock {
-    self.reconnect = NO;
+    if (self.reconnect) {
+        self.neededReconnect = NO;
+    }
     if (self.peripheral.state == CBPeripheralStateDisconnected) {
         if (resultBlock) {
             resultBlock(NO, @"当前设备已是断开状态！！！");

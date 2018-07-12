@@ -165,7 +165,7 @@
 - (void)centralManager:(CBCentralManager *)central didDisconnectPeripheral:(CBPeripheral *)peripheral error:(nullable NSError *)error {
     id<YMZBLEDeviceProtocol> device = [self bleDeviceByIdentifier:peripheral.identifier.UUIDString];
     [self removeDidConnictedDevice:device];
-    if (device.reconnect) {
+    if (device.neededReconnect) {
         [central connectPeripheral:device.peripheral options:nil];
     }
 }

@@ -26,6 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
 NS_ASSUME_NONNULL_END
 /*! 异常断开重连 默认 NO  手动断开时请先赋值为NO防止断开后重新连接   ⚠️：手动调用断开时会被置为NO，如需保持自动重连请在连接前赋值YES*/
 @property (nonatomic, assign) BOOL reconnect;
+@property (nonatomic, assign) BOOL neededReconnect;//是否需要重连
 @optional
 /*! 发起连接*/
 - (void)connectWithResultBlock:(ConnectBlock _Nullable )resultBlock;
