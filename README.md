@@ -39,7 +39,7 @@
 
 推荐创建一个单例类并持有一个中心设备管理器`YMZBLEManager`对象，以下均按这种思路设计，当然最终实现看自己的想法
 
-**已demo为例:**
+**以demo为例:**
 ```
 @interface YMZPrinterManager()<CHDBLEManagerDelegate, CHDBLEManagerDatasource>
 @property (nonatomic, strong) YMZBLEManager *manager;
@@ -199,6 +199,3 @@ NS_ASSUME_NONNULL_END
 ```
 
 ## 外设（服务端）
-
-
-
