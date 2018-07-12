@@ -10,9 +10,9 @@
 
 @interface YMZBLEManager()<CBCentralManagerDelegate>
 
-@property (nonatomic, weak) id<CHDBLEManagerDelegate> delegate;
+@property (nonatomic, weak) id<YMZBLEManagerDelegate> delegate;
 
-@property (nonatomic, weak) id<CHDBLEManagerDatasource> datasource;
+@property (nonatomic, weak) id<YMZBLEManagerDatasource> datasource;
 
 @property (nonatomic, strong) CBCentralManager *centralManager;
 //一搜索到的设备
@@ -23,7 +23,7 @@
 
 @implementation YMZBLEManager
 
-- (instancetype)initWithDelegate:(id<CHDBLEManagerDelegate>)delegate datasource:(id<CHDBLEManagerDatasource>)datasource {
+- (instancetype)initWithDelegate:(id<YMZBLEManagerDelegate>)delegate datasource:(id<YMZBLEManagerDatasource>)datasource {
     if (self = [super init]) {
         _delegate = delegate;
         _datasource = datasource;

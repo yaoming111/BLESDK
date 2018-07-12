@@ -60,7 +60,7 @@
 		466A9C3E1FD7AAD80098D118 /* YMZBLEManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YMZBLEManager.h; sourceTree = "<group>"; };
 		466A9C3F1FD7AAD80098D118 /* YMZBLEManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YMZBLEManager.m; sourceTree = "<group>"; };
 		466A9C411FD7ABCB0098D118 /* YMZBLEDeviceProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YMZBLEDeviceProtocol.h; sourceTree = "<group>"; };
-		466A9C421FD7B3880098D118 /* CHDBLEManagerProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CHDBLEManagerProtocol.h; sourceTree = "<group>"; };
+		466A9C421FD7B3880098D118 /* YMZBLEManagerProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YMZBLEManagerProtocol.h; sourceTree = "<group>"; };
 		466A9C431FD7BF7C0098D118 /* YMZBaseBLEDevice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YMZBaseBLEDevice.h; sourceTree = "<group>"; };
 		466A9C441FD7BF7C0098D118 /* YMZBaseBLEDevice.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YMZBaseBLEDevice.m; sourceTree = "<group>"; };
 		466A9C471FD7C6B00098D118 /* YMZPrinterManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YMZPrinterManager.h; sourceTree = "<group>"; };
@@ -200,7 +200,7 @@
 				466A9C431FD7BF7C0098D118 /* YMZBaseBLEDevice.h */,
 				466A9C441FD7BF7C0098D118 /* YMZBaseBLEDevice.m */,
 				466A9C411FD7ABCB0098D118 /* YMZBLEDeviceProtocol.h */,
-				466A9C421FD7B3880098D118 /* CHDBLEManagerProtocol.h */,
+				466A9C421FD7B3880098D118 /* YMZBLEManagerProtocol.h */,
 				466A9C4A1FD7CA8D0098D118 /* YMZBLEHeader.h */,
 				466A9C4E1FD7D7B30098D118 /* YMZGCDTimer.h */,
 				466A9C4F1FD7D7B30098D118 /* YMZGCDTimer.m */,

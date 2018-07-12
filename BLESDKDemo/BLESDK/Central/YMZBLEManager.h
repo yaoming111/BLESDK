@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreBluetooth/CoreBluetooth.h>
 #import "YMZBLEDeviceProtocol.h"
-#import "CHDBLEManagerProtocol.h"
+#import "YMZBLEManagerProtocol.h"
 @interface YMZBLEManager : NSObject
 
 NS_ASSUME_NONNULL_BEGIN
@@ -18,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 /*! 已连接的设备*/
 @property (nonatomic, strong, readonly) NSMutableArray<id<YMZBLEDeviceProtocol>> *didConnectedPeripherals;
 
-- (instancetype)initWithDelegate:(id<CHDBLEManagerDelegate>)delegate datasource:(id<CHDBLEManagerDatasource>)datasource;
+- (instancetype)initWithDelegate:(id<YMZBLEManagerDelegate>)delegate datasource:(id<YMZBLEManagerDatasource>)datasource;
 /*! 设备当前状态 eg: CBManagerStatePoweredOff 设备未开启蓝牙开关 */
 - (CBManagerState)deviceState;
 /*! 指定服务搜索*/

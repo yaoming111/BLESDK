@@ -11,6 +11,6 @@
 
 #import "YMZBLEManager.h"
 #import "YMZBaseBLEDevice.h"
-#import "CHDBLEManagerProtocol.h"
+#import "YMZBLEManagerProtocol.h"
 #import "YMZGCDTimer.h"
 #endif /* YMZBLEHeader_h */

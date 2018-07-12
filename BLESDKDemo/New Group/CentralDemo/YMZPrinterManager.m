@@ -9,7 +9,7 @@
 #import "YMZPrinterManager.h"
 #import "YMZPrinter.h"
 
-@interface YMZPrinterManager()<CHDBLEManagerDelegate, CHDBLEManagerDatasource>
+@interface YMZPrinterManager()<YMZBLEManagerDelegate, YMZBLEManagerDatasource>
 @property (nonatomic, strong) YMZBLEManager *manager;
 
 @end

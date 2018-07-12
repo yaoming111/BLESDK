@@ -15,7 +15,7 @@
 
 @protocol YMZBLEDeviceProtocol;
 
-@protocol CHDBLEManagerDelegate <NSObject>
+@protocol YMZBLEManagerDelegate <NSObject>
 @required
 //central.state == CBManagerStatePoweredOn 才能发起搜索
 - (void)BLEManager:(YMZBLEManager *)BLEManager centralManagerDidUpdateState:(CBCentralManager *)central;
@@ -25,7 +25,7 @@
 
 @end
 
-@protocol CHDBLEManagerDatasource <NSObject>
+@protocol YMZBLEManagerDatasource <NSObject>
 @required
 /*! 在这里返回 遵守CHDDeviceProtocol,CBPeripheralDelegate 协议的外设对象*/
 - (id<YMZBLEDeviceProtocol, CBPeripheralDelegate>)BLEManager:(YMZBLEManager *)BLEManager conversionCustomDeviceInstanceWithPeripheral:(CBPeripheral *)peripheral advertisementData:(NSDictionary<NSString *, id> *)advertisementData RSSI:(NSNumber *)RSSI;
