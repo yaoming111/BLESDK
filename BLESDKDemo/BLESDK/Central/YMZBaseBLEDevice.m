@@ -444,7 +444,7 @@ dispatch_queue_t writerDataQueue() {
     static dispatch_queue_t writerDataQueue;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        writerDataQueue = dispatch_queue_create("com.xkeshi.printer.writerDataQueue", DISPATCH_QUEUE_SERIAL);
+        writerDataQueue = dispatch_queue_create("com.ymz.writerDataQueue", DISPATCH_QUEUE_SERIAL);
     });
     return writerDataQueue;
 }
