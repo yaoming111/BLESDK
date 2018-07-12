@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
   s.author       = { "Y@o" => "ymz@xkeshi.com" }
   s.platform     = :ios, "9.0"
   s.source       = { :git => "https://github.com/ymzgithub/BLESDK.git", :tag => "0.0.1r" }
-  s.source_files  =  "BLESDK/**/*.{h,m}"
+  s.source_files  =  "BLESDKDemo/BLESDK/**/*.{h,m}"
   s.requires_arc = true
 
 end
